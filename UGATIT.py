@@ -374,6 +374,9 @@ class UGATIT(object) :
             print(" [*] Load FAILURE")
             return
 
+        A2B = np.zeros((self.img_size * 7, 0, 3))
+        B2A = np.zeros((self.img_size * 7, 0, 3)) 
+
         self.genA2B.eval(), self.genB2A.eval()
         for n, (real_A, _) in enumerate(self.testA_loader):
             real_A = real_A.to(self.device)
